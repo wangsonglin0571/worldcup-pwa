@@ -1,12 +1,12 @@
 {
-  "name": "World Cup PWA",
-  "short_name": "World Cup",
-  "description": "世界杯国家队单页入口页，统一按北京时间展示。",
+  "name": "日本队 · 世界杯征程",
+  "short_name": "日本征程",
+  "description": "日本队世界杯极简单页追踪，全部按北京时间展示。",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
-  "background_color": "#0a1630",
-  "theme_color": "#0a1630",
+  "background_color": "#081426",
+  "theme_color": "#081426",
   "icons": [
     {
       "src": "icon-192.png",

@@ -8,27 +8,24 @@
 <link rel="manifest" href="site.webmanifest">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="日本征程">
-<meta name="theme-color" content="#081426">
-<title>日本队 · 世界杯征程</title>
+<meta name="apple-mobile-web-app-title" content="World Cup PWA">
+<meta name="theme-color" content="#0a1630">
+<title>World Cup PWA · 入口页</title>
 <style>
 :root {
-  --bg: #081426;
-  --bg2: #0d2340;
-  --panel: rgba(10, 27, 48, 0.88);
-  --panel-strong: rgba(7, 19, 34, 0.95);
-  --line: rgba(158, 194, 230, 0.16);
-  --text: #f4f8ff;
-  --muted: rgba(226, 237, 250, 0.64);
-  --soft: rgba(226, 237, 250, 0.18);
-  --blue: #5fa8ff;
-  --blue2: #8ec3ff;
-  --red: #db2440;
-  --red2: #ff7288;
-  --white: #ffffff;
+  --bg: #08142b;
+  --bg2: #0f2450;
+  --panel: rgba(11, 24, 48, 0.9);
+  --panel-soft: rgba(255, 255, 255, 0.06);
+  --line: rgba(255, 255, 255, 0.08);
+  --text: #f6f8fb;
+  --muted: rgba(228, 234, 244, 0.7);
+  --gold: #d6b46a;
+  --red: #d11b3a;
+  --blue: #547cdf;
   --safe-top: env(safe-area-inset-top, 44px);
   --safe-bot: env(safe-area-inset-bottom, 34px);
-  --shadow: 0 14px 32px rgba(0, 0, 0, 0.28);
+  --shadow: 0 16px 36px rgba(0, 0, 0, 0.28);
 }
 
 * {
@@ -41,106 +38,39 @@
 html, body {
   min-height: 100%;
   background:
-    radial-gradient(circle at top right, rgba(219, 36, 64, 0.28), transparent 30%),
-    radial-gradient(circle at left 18% top 18%, rgba(95, 168, 255, 0.2), transparent 28%),
-    linear-gradient(180deg, #071220 0%, #0a1930 52%, #071220 100%);
+    radial-gradient(circle at top left, rgba(84, 124, 223, 0.22), transparent 28%),
+    radial-gradient(circle at top right, rgba(209, 27, 58, 0.22), transparent 28%),
+    linear-gradient(180deg, #071123 0%, #0a1630 50%, #071123 100%);
   color: var(--text);
-  font-family: -apple-system, "PingFang SC", "Hiragino Sans GB", "Helvetica Neue", sans-serif;
+  font-family: -apple-system, "PingFang SC", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
 body {
-  padding-bottom: calc(var(--safe-bot) + 24px);
+  padding-bottom: calc(var(--safe-bot) + 28px);
 }
 
 #app {
-  max-width: 720px;
+  max-width: 760px;
   margin: 0 auto;
-  padding-bottom: 20px;
 }
 
 .safe-top {
   height: var(--safe-top);
 }
 
-.nav {
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  backdrop-filter: blur(18px);
-  background: rgba(5, 14, 27, 0.84);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 14px 18px 12px;
-}
-
-.nav-left {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.nav-crest {
-  width: 38px;
-  height: 38px;
-  border-radius: 12px;
-  background:
-    radial-gradient(circle at center, #fff 0 42%, transparent 43%),
-    linear-gradient(180deg, rgba(255,255,255,0.14), rgba(255,255,255,0.02));
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.04);
-  position: relative;
-}
-
-.nav-crest::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  margin: auto;
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  background: #db2440;
-}
-
-.nav-title {
-  font-size: 18px;
-  font-weight: 800;
-  letter-spacing: 1.6px;
-}
-
-.nav-sub {
-  font-size: 11px;
-  color: var(--muted);
-  margin-top: 2px;
-  letter-spacing: 0.4px;
-}
-
-.refresh-btn {
-  width: 34px;
-  height: 34px;
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  background: rgba(255, 255, 255, 0.06);
-  color: var(--text);
-  font-size: 16px;
-  cursor: pointer;
-}
-
-.page {
-  padding: 16px;
+.wrap {
+  padding: 18px 16px 0;
 }
 
 .hero {
   position: relative;
   overflow: hidden;
+  padding: 24px 22px;
+  border-radius: 28px;
   background:
-    linear-gradient(160deg, rgba(14, 36, 64, 0.96) 0%, rgba(7, 20, 38, 0.98) 100%);
+    linear-gradient(160deg, rgba(12, 27, 58, 0.98) 0%, rgba(8, 18, 39, 0.98) 100%);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 24px;
-  padding: 24px 22px 22px;
   box-shadow: var(--shadow);
 }
 
@@ -149,44 +79,32 @@ body {
   position: absolute;
   width: 220px;
   height: 220px;
-  right: -70px;
+  left: -70px;
   top: -90px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(219, 36, 64, 0.34) 0%, transparent 68%);
+  background: radial-gradient(circle, rgba(84, 124, 223, 0.22) 0%, transparent 70%);
 }
 
 .hero::after {
   content: "";
   position: absolute;
-  width: 170px;
-  height: 170px;
-  left: -58px;
-  bottom: -70px;
+  width: 220px;
+  height: 220px;
+  right: -80px;
+  bottom: -110px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(95, 168, 255, 0.22) 0%, transparent 68%);
+  background: radial-gradient(circle, rgba(209, 27, 58, 0.2) 0%, transparent 70%);
 }
 
-.hero-top,
-.hero-bottom {
-  position: relative;
-  z-index: 1;
-}
-
-.hero-meta {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 12px;
-}
-
-.eyebrow {
+.eyebrow,
+.note-tag {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 7px 10px;
+  padding: 7px 11px;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.08);
-  color: var(--blue2);
+  color: var(--gold);
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.8px;
@@ -194,46 +112,22 @@ body {
 
 .hero-title {
   margin-top: 14px;
-  font-size: 28px;
-  font-weight: 800;
+  font-size: 34px;
   line-height: 1.08;
-}
-
-.hero-match {
-  margin-top: 8px;
-  font-size: 15px;
-  color: var(--muted);
-}
-
-.countdown {
-  margin-top: 18px;
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 10px;
-}
-
-.countdown-item {
-  border-radius: 16px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 12px 8px 10px;
-  text-align: center;
-}
-
-.countdown-val {
-  font-size: 28px;
   font-weight: 800;
-  line-height: 1;
 }
 
-.countdown-lbl {
-  margin-top: 4px;
-  font-size: 10px;
+.hero-copy {
+  margin-top: 12px;
+  max-width: 560px;
   color: var(--muted);
-  letter-spacing: 0.6px;
+  line-height: 1.6;
+  font-size: 15px;
 }
 
-.hero-bottom {
+.hero-grid {
+  position: relative;
+  z-index: 1;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 10px;
@@ -241,16 +135,16 @@ body {
 }
 
 .hero-chip {
-  border-radius: 16px;
-  padding: 12px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  padding: 12px 14px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.07);
 }
 
 .hero-chip-label {
-  font-size: 10px;
   color: var(--muted);
-  letter-spacing: 0.7px;
+  font-size: 10px;
+  letter-spacing: 0.6px;
 }
 
 .hero-chip-value {
@@ -264,182 +158,138 @@ body {
 }
 
 .section-title {
+  margin: 0 4px 8px;
+  color: var(--gold);
   font-size: 11px;
   font-weight: 800;
-  color: var(--blue2);
   letter-spacing: 1.3px;
   text-transform: uppercase;
-  margin: 0 4px 8px;
 }
 
-.card {
-  background: var(--panel);
-  border: 1px solid var(--line);
-  border-radius: 22px;
-  overflow: hidden;
-  box-shadow: var(--shadow);
-}
-
-.status-card {
-  padding: 16px 18px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 14px;
-}
-
-.status-copy {
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 1.45;
-}
-
-.status-tag {
-  white-space: nowrap;
-  padding: 8px 12px;
-  border-radius: 999px;
-  background: rgba(219, 36, 64, 0.14);
-  color: #ffb0bc;
-  font-size: 12px;
-  font-weight: 700;
-}
-
-.timeline-item,
-.player-row,
-.footer-row {
-  padding: 15px 18px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-}
-
-.timeline-item:last-child,
-.player-row:last-child,
-.footer-row:last-child {
-  border-bottom: none;
-}
-
-.timeline-head {
-  display: flex;
-  justify-content: space-between;
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 12px;
 }
 
-.timeline-round {
+.team-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  padding: 18px;
+  box-shadow: var(--shadow);
+}
+
+.team-card:active {
+  transform: translateY(1px);
+}
+
+.team-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.team-badge {
+  width: 54px;
+  height: 54px;
+  border-radius: 18px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.team-badge.japan {
+  background: linear-gradient(180deg, rgba(255,255,255,0.16), rgba(255,255,255,0.03)), #0a1a34;
+}
+
+.team-badge.japan::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--red);
+}
+
+.team-badge.france {
+  background: linear-gradient(90deg, #214db4 0 33.33%, #f4f6fb 33.33% 66.66%, #c91432 66.66% 100%);
+}
+
+.team-flag {
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.team-name {
+  margin-top: 16px;
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.team-sub {
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.team-copy {
+  margin-top: 14px;
+  color: var(--muted);
+  line-height: 1.55;
+  font-size: 14px;
+}
+
+.team-cta {
+  margin-top: 16px;
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  color: var(--text);
   font-size: 13px;
   font-weight: 700;
 }
 
-.timeline-round::before {
-  content: "";
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--blue);
-  box-shadow: 0 0 0 4px rgba(95, 168, 255, 0.14);
+.notes {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  padding: 18px;
 }
 
-.timeline-time {
-  font-size: 12px;
-  color: var(--muted);
+.note-row + .note-row {
+  margin-top: 12px;
 }
 
-.timeline-opponent {
-  margin-top: 10px;
-  font-size: 20px;
-  font-weight: 800;
-  line-height: 1.15;
-}
-
-.timeline-meta {
-  margin-top: 8px;
-  font-size: 13px;
-  color: var(--muted);
-  line-height: 1.5;
-}
-
-.player-row {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-
-.player-no {
-  width: 40px;
-  height: 40px;
-  border-radius: 12px;
-  background: rgba(95, 168, 255, 0.12);
-  color: var(--blue2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 16px;
-  font-weight: 800;
-}
-
-.player-main {
-  flex: 1;
-}
-
-.player-name {
-  font-size: 16px;
+.note-title {
+  font-size: 14px;
   font-weight: 700;
 }
 
-.player-meta {
-  margin-top: 3px;
-  font-size: 12px;
+.note-copy {
+  margin-top: 4px;
   color: var(--muted);
-}
-
-.player-note {
-  margin-top: 5px;
   font-size: 13px;
-  line-height: 1.45;
+  line-height: 1.55;
 }
 
-.footer-card {
-  background: var(--panel-strong);
-}
-
-.footer-row {
-  display: flex;
-  justify-content: space-between;
-  gap: 14px;
-}
-
-.footer-label {
-  font-size: 12px;
-  color: var(--muted);
-}
-
-.footer-value {
-  font-size: 13px;
-  font-weight: 700;
-  text-align: right;
-}
-
-@media (max-width: 520px) {
+@media (max-width: 640px) {
   .hero-title {
-    font-size: 24px;
+    font-size: 29px;
   }
 
-  .countdown {
-    gap: 8px;
-  }
-
-  .countdown-val {
-    font-size: 24px;
-  }
-
-  .hero-bottom {
+  .hero-grid,
+  .grid {
     grid-template-columns: 1fr;
-  }
-
-  .status-card {
-    flex-direction: column;
-    align-items: flex-start;
   }
 }
 </style>
@@ -447,223 +297,70 @@ body {
 <body>
 <div id="app">
   <div class="safe-top"></div>
-  <div class="nav">
-    <div class="nav-left">
-      <div class="nav-crest"></div>
-      <div>
-        <div class="nav-title">JAPAN JOURNEY</div>
-        <div class="nav-sub">世界杯单页追踪 · 北京时间</div>
-      </div>
-    </div>
-    <button id="refresh-btn" class="refresh-btn" onclick="refreshPage()">↻</button>
-  </div>
-
-  <div class="page">
+  <div class="wrap">
     <section class="hero">
-      <div class="hero-top">
-        <div class="hero-meta">
-          <div>
-            <div class="eyebrow" id="hero-stage">WORLD CUP 2026</div>
-            <div class="hero-title" id="hero-title">日本队下一场</div>
-            <div class="hero-match" id="hero-match">加载中…</div>
+      <div class="eyebrow">WORLD CUP PWA · 北京时间</div>
+      <div class="hero-title">选择一支队伍，直接进入你的世界杯单页。</div>
+      <div class="hero-copy">
+        这里不做大而全，只保留最常打开会看的内容：下一场、倒计时、征程时间线、关键球员和一句话判断。所有时间统一按中国时区展示。
+      </div>
+      <div class="hero-grid">
+        <div class="hero-chip">
+          <div class="hero-chip-label">已上线</div>
+          <div class="hero-chip-value">日本队 / 法国队</div>
+        </div>
+        <div class="hero-chip">
+          <div class="hero-chip-label">展示时区</div>
+          <div class="hero-chip-value">北京时间 UTC+8</div>
+        </div>
+        <div class="hero-chip">
+          <div class="hero-chip-label">使用方式</div>
+          <div class="hero-chip-value">Safari 添加到主屏幕</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title">队伍入口</div>
+      <div class="grid">
+        <a class="team-card" href="./japan/">
+          <div class="team-top">
+            <div class="team-badge japan"></div>
+            <div class="team-flag">SAMURAI BLUE</div>
           </div>
-        </div>
+          <div class="team-name">日本队</div>
+          <div class="team-sub">单页 PWA · 极简追踪</div>
+          <div class="team-copy">重点看下一场、出线形势、时间线和关键球员，叙事更偏出线与冲击历史最佳。</div>
+          <div class="team-cta">进入日本队 →</div>
+        </a>
 
-        <div class="countdown" id="countdown">
-          <div class="countdown-item"><div class="countdown-val">--</div><div class="countdown-lbl">天</div></div>
-          <div class="countdown-item"><div class="countdown-val">--</div><div class="countdown-lbl">时</div></div>
-          <div class="countdown-item"><div class="countdown-val">--</div><div class="countdown-lbl">分</div></div>
-          <div class="countdown-item"><div class="countdown-val">--</div><div class="countdown-lbl">秒</div></div>
-        </div>
-      </div>
-
-      <div class="hero-bottom">
-        <div class="hero-chip">
-          <div class="hero-chip-label">小组 / 目标</div>
-          <div class="hero-chip-value" id="hero-group">-</div>
-        </div>
-        <div class="hero-chip">
-          <div class="hero-chip-label">北京时间</div>
-          <div class="hero-chip-value" id="hero-kickoff">-</div>
-        </div>
-        <div class="hero-chip">
-          <div class="hero-chip-label">比赛地点</div>
-          <div class="hero-chip-value" id="hero-venue">-</div>
-        </div>
+        <a class="team-card" href="./france/">
+          <div class="team-top">
+            <div class="team-badge france"></div>
+            <div class="team-flag">LES BLEUS</div>
+          </div>
+          <div class="team-name">法国队</div>
+          <div class="team-sub">单页 PWA · 极简追踪</div>
+          <div class="team-copy">重点看争冠路线、强强对话和核心球员状态，叙事更偏卫冕与小组头名路线。</div>
+          <div class="team-cta">进入法国队 →</div>
+        </a>
       </div>
     </section>
 
     <section class="section">
-      <div class="section-title">一句话状态</div>
-      <div class="card status-card">
-        <div class="status-copy" id="status-copy">加载中…</div>
-        <div class="status-tag" id="status-tag">关注中</div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="section-title">世界杯征程</div>
-      <div class="card" id="timeline"></div>
-    </section>
-
-    <section class="section">
-      <div class="section-title">关键球员</div>
-      <div class="card" id="players"></div>
-    </section>
-
-    <section class="section">
-      <div class="section-title">状态条</div>
-      <div class="card footer-card">
-        <div class="footer-row">
-          <div class="footer-label">最近结果</div>
-          <div class="footer-value" id="footer-last">世界杯尚未开赛</div>
+      <div class="section-title">使用说明</div>
+      <div class="notes">
+        <div class="note-row">
+          <div class="note-title">先选队伍，再加主屏幕</div>
+          <div class="note-copy">如果你想把日本队或法国队单独放到 iPhone 主屏，请先进入对应页面，再用 Safari 的“添加到主屏幕”。这样图标和名称都会是对应队伍版本。</div>
         </div>
-        <div class="footer-row">
-          <div class="footer-label">当前战绩</div>
-          <div class="footer-value" id="footer-record">0胜 0平 0负</div>
-        </div>
-        <div class="footer-row">
-          <div class="footer-label">数据更新时间</div>
-          <div class="footer-value" id="footer-updated">加载中…</div>
+        <div class="note-row">
+          <div class="note-title">全部按北京时间展示</div>
+          <div class="note-copy">包括比赛时间、倒计时、今天/明天的判断，统一按中国时区计算，不需要你自己再换算。</div>
         </div>
       </div>
     </section>
   </div>
 </div>
-
-<script>
-const TIMEZONE = "Asia/Shanghai";
-let data = null;
-let countdownTimer = null;
-
-function formatBeijing(dateString, opts = {}) {
-  const date = new Date(dateString);
-  return new Intl.DateTimeFormat("zh-CN", {
-    timeZone: TIMEZONE,
-    month: "numeric",
-    day: "numeric",
-    hour: "2-digit",
-    minute: "2-digit",
-    hour12: false,
-    ...opts,
-  }).format(date);
-}
-
-function updateCountdown(kickoff) {
-  const wrap = document.getElementById("countdown");
-  const target = new Date(kickoff).getTime();
-
-  function renderCountdown() {
-    const delta = Math.max(0, target - Date.now());
-    const totalSeconds = Math.floor(delta / 1000);
-    const days = Math.floor(totalSeconds / 86400);
-    const hours = Math.floor((totalSeconds % 86400) / 3600);
-    const minutes = Math.floor((totalSeconds % 3600) / 60);
-    const seconds = totalSeconds % 60;
-
-    wrap.innerHTML = [
-      { label: "天", value: String(days).padStart(2, "0") },
-      { label: "时", value: String(hours).padStart(2, "0") },
-      { label: "分", value: String(minutes).padStart(2, "0") },
-      { label: "秒", value: String(seconds).padStart(2, "0") },
-    ].map((item) => `
-      <div class="countdown-item">
-        <div class="countdown-val">${item.value}</div>
-        <div class="countdown-lbl">${item.label}</div>
-      </div>
-    `).join("");
-  }
-
-  if (countdownTimer) clearInterval(countdownTimer);
-  renderCountdown();
-  countdownTimer = setInterval(renderCountdown, 1000);
-}
-
-function renderHero() {
-  const next = data.next_match;
-  document.getElementById("hero-stage").textContent = data.summary.stage;
-  document.getElementById("hero-title").textContent = `日本队 vs ${next.opponent}`;
-  document.getElementById("hero-match").textContent = `${next.round} · ${next.story}`;
-  document.getElementById("hero-group").textContent = `${data.summary.group} · ${data.summary.goal}`;
-  document.getElementById("hero-kickoff").textContent = formatBeijing(next.kickoff_bjt);
-  document.getElementById("hero-venue").textContent = next.venue;
-  updateCountdown(next.kickoff_bjt);
-}
-
-function renderStatus() {
-  document.getElementById("status-copy").textContent = data.status.text;
-  document.getElementById("status-tag").textContent = data.status.tag;
-}
-
-function renderTimeline() {
-  const el = document.getElementById("timeline");
-  el.innerHTML = data.matches.map((match) => `
-    <div class="timeline-item">
-      <div class="timeline-head">
-        <div class="timeline-round">${match.round}</div>
-        <div class="timeline-time">${formatBeijing(match.kickoff_bjt)}</div>
-      </div>
-      <div class="timeline-opponent">日本队 vs ${match.opponent}</div>
-      <div class="timeline-meta">
-        ${match.stage}<br>
-        ${match.venue}<br>
-        ${match.note}
-      </div>
-    </div>
-  `).join("");
-}
-
-function renderPlayers() {
-  const el = document.getElementById("players");
-  el.innerHTML = data.key_players.map((player) => `
-    <div class="player-row">
-      <div class="player-no">${player.number}</div>
-      <div class="player-main">
-        <div class="player-name">${player.name}</div>
-        <div class="player-meta">${player.role} · ${player.club}</div>
-        <div class="player-note">${player.note}</div>
-      </div>
-    </div>
-  `).join("");
-}
-
-function renderFooter() {
-  document.getElementById("footer-last").textContent = data.footer.last_result;
-  document.getElementById("footer-record").textContent = data.footer.record;
-  document.getElementById("footer-updated").textContent = data.updated;
-}
-
-async function loadData() {
-  const response = await fetch(`data.json?t=${Date.now()}`);
-  if (!response.ok) throw new Error("load failed");
-  data = await response.json();
-  renderHero();
-  renderStatus();
-  renderTimeline();
-  renderPlayers();
-  renderFooter();
-}
-
-async function refreshPage() {
-  const btn = document.getElementById("refresh-btn");
-  btn.disabled = true;
-  btn.style.transform = "rotate(360deg)";
-  btn.style.transition = "transform 0.6s ease";
-  try {
-    await loadData();
-  } finally {
-    setTimeout(() => {
-      btn.disabled = false;
-      btn.style.transform = "";
-      btn.style.transition = "";
-    }, 700);
-  }
-}
-
-loadData().catch(() => {
-  document.getElementById("status-copy").textContent = "数据暂时加载失败，稍后点击右上角刷新。";
-  document.getElementById("footer-updated").textContent = "加载失败";
-});
-</script>
 </body>
 </html>
