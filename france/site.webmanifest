@@ -1,0 +1,22 @@
+{
+  "name": "法国队 · 世界杯征程",
+  "short_name": "法国征程",
+  "description": "法国队世界杯极简单页追踪，全部按北京时间展示。",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#081a39",
+  "theme_color": "#081a39",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

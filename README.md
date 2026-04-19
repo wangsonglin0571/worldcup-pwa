@@ -5,6 +5,7 @@ Minimal PWA projects for World Cup national-team tracking.
 Current version:
 
 - Japan single-page PWA
+- France single-page PWA in `/france`
 - All match times shown in Beijing time (`UTC+8`)
 
 Core sections:
